@@ -2,10 +2,10 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   build_web:
     name: Build Flutter (Web)
@@ -19,7 +19,7 @@ jobs:
     - run: flutter config --enable-web
     - run: flutter build web
     - name: Archive Production Artifact
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       with:
         name: web-build
         path: build/web
@@ -38,7 +38,7 @@ jobs:
     - run: flutter clean
     - run: flutter build ios --release --no-codesign
     - name: Upload iPA
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       with:
         name: ios-build
         path: build/ios/iphoneos
@@ -58,7 +58,7 @@ jobs:
 #     - run: flutter build appbundle --target-platform android-arm,android-arm64
     - run: flutter build appbundle
     - name: Upload APK
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       with:
         name: apk-build
         path: build/app/outputs/apk/release
@@ -70,12 +70,12 @@ jobs:
 #      - name: Checkout Repo
 #        uses: actions/checkout@master
 #      - name: Download Artifact
-#        uses: actions/download-artifact@master
+#        uses: actions/download-artifact@main
 #        with:
 #          name: web-build
 #          path: web-build
 #      - name: Deploy to Firebase
-#        uses: w9jds/firebase-action@master
+#        uses: w9jds/firebase-action@main
 #        with:
 #          args: deploy --only hosting --public web-build
 #        env:
