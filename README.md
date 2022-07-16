@@ -1,5 +1,7 @@
 # sampleproject
 
+![example workflow](https://github.com/sommovir/flutterfirst/actions/workflows/build.yml/badge.svg?event=push)
+
 A new Flutter project.
 
 ## Getting Started
