@@ -1,10 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-void main() {
-  runApp(const MyApp());
+Uri uri = Uri.parse('https://flutter.io');
+
+void main() async => runApp(MaterialApp(
+  home: Scaffold(//Scaffold --> Schermo principale
+    backgroundColor: Colors.red,
+    appBar: AppBar(//barra in alto
+      backgroundColor: Colors.yellow,
+      title: Text("Questa è l'AppBar"),
+      centerTitle: true,//Centro il testo
+    ),
+    body: Center(//Tutto quello che scrivo sarà centrato
+      child: Text(//Tutto quello che scrivo qui sarà relativo al testo
+        "Testo centrato e colorato",
+          style: TextStyle(color: Colors.deepPurpleAccent),
+      ),
+
+    ),
+
+    floatingActionButton: FloatingActionButton(onPressed: () => _launchUrl,//Fai x alla pressione del pulsante, dovrebbe funzionare come metodo ma non funziona
+      child: Text("Premi"),//testo del pulsante
+      backgroundColor: Colors.green,//colore del pulsante
+
+    ),
+  ),
+  title: 'Prova'//Titolo dell'app/pagina/ecc...,
+));
+
+Future<void> _launchUrl() async {//Dovrebbe funzionare ma non va
+  if (await canLaunchUrl(uri)){
+    await launchUrl(uri);
+  } else {
+// can't launch url
+  }
 }
 
-class MyApp extends StatelessWidget {
+
+
+/*class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
@@ -111,5 +145,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-}
+  }*/
+
