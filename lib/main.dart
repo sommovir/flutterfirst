@@ -5,6 +5,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:sampleproject/BottomNavRoutes/counter_example.dart';
 import 'package:sampleproject/BottomNavRoutes/list_example.dart';
+import 'package:sampleproject/BottomNavRoutes/todo_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
   final List<Widget> widgetList = [
     CounterSample(),
     ListManager(),
-    Center(child: Text("TODO")),
+    ToDoList(),
     Center(child: Text("TODO")),
   ];
 
@@ -69,7 +70,7 @@ class _HomeViewState extends State<HomeView> {
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home), label: 'Counter'),
             NavigationDestination(icon: Icon(Icons.search), label: 'List'),
-            NavigationDestination(icon: Icon(Icons.people), label: 'TODO'),
+            NavigationDestination(icon: Icon(Icons.people), label: 'To do'),
             NavigationDestination(
                 icon: Icon(Icons.meeting_room), label: 'TODO'),
           ],
