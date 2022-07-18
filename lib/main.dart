@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:sampleproject/BottomNavRoutes/counter_example.dart';
+import 'package:sampleproject/BottomNavRoutes/fetch_data_account.dart';
 import 'package:sampleproject/BottomNavRoutes/list_example.dart';
 import 'package:sampleproject/BottomNavRoutes/todo_example.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.blue, brightness: Brightness.light)),
-      home: HomeView(title: 'Json Response Example'),
+      home: HomeView(title: 'Flutter Examples'),
     );
   }
 }
@@ -42,6 +43,7 @@ class _HomeViewState extends State<HomeView> {
     CounterSample(),
     ListManager(),
     ToDoList(),
+    JsonListResponse(),
     Center(child: Text("TODO")),
   ];
 
@@ -71,6 +73,8 @@ class _HomeViewState extends State<HomeView> {
             NavigationDestination(icon: Icon(Icons.home), label: 'Counter'),
             NavigationDestination(icon: Icon(Icons.search), label: 'List'),
             NavigationDestination(icon: Icon(Icons.people), label: 'To do'),
+            NavigationDestination(
+                icon: Icon(Icons.accessible_sharp), label: 'GET JSON'),
             NavigationDestination(
                 icon: Icon(Icons.meeting_room), label: 'TODO'),
           ],
