@@ -49,12 +49,12 @@ class _ListManagerState extends State<ListManager> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
-              onPressed: resetList, child: Icon(Icons.restart_alt)),
-          SizedBox(
+              onPressed: resetList, child: const Icon(Icons.restart_alt)),
+          const SizedBox(
             width: 10,
           ),
           FloatingActionButton(
-              onPressed: addSmthToList, child: Icon(Icons.add)),
+              onPressed: addSmthToList, child: const Icon(Icons.add)),
         ],
       ),
       body: ListView.builder(
@@ -69,14 +69,14 @@ class _ListManagerState extends State<ListManager> {
                       sampleList[index],
                       style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
                     ),
-                    leading: Icon(Icons.home_filled),
+                    leading: const Icon(Icons.home_filled),
                     subtitle: Text("$index"),
                     dense: false,
                     onTap: (() {}),
                     tileColor: Colors.deepPurple[50],
-                    trailing: Icon(Icons.menu),
+                    trailing: const Icon(Icons.menu),
                     onLongPress: (() => removeItem(index)),
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7))),
                   ),
                   // Padding(

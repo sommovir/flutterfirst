@@ -29,4 +29,23 @@ class HTTPManager {
 
     return accounts;
   }
+
+  Future<int> registerAccount(Account a) async {
+    final uri = Uri.parse("http://lin.java-injection.dev/register");
+
+    var jsonBody = Account.toJson(a);
+
+    final response = await http.post(uri,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
+          'id': a.id,
+          'username': a.username,
+          'password': a.password,
+          'money': a.money,
+        }));
+
+    return response.statusCode;
+  }
 }
