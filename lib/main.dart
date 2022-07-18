@@ -7,6 +7,7 @@ import 'package:sampleproject/BottomNavRoutes/counter_example.dart';
 import 'package:sampleproject/BottomNavRoutes/fetch_data_account.dart';
 import 'package:sampleproject/BottomNavRoutes/list_example.dart';
 import 'package:sampleproject/BottomNavRoutes/todo_example.dart';
+import 'package:sampleproject/BottomNavRoutes/todo_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
     ListManager(),
     ToDoList(),
     JsonListResponse(),
-    Center(child: Text("TODO")),
+    TodoWidget(),
   ];
 
   int selectedIndex = 0;
