@@ -13,34 +13,12 @@ class TodoWidget extends StatefulWidget {
 class TodoWidgetState extends State<TodoWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Flexible(
-          child: Container(
-            color: Colors.red,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Flexible(
-                    child: Container(
-                        color: Colors.blue, child: Text("CELLA 0, 0"))),
-                Flexible(
-                    child: Container(
-                        color: Colors.amber, child: Text("CELLA 0, 1"))),
-              ],
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            Text("CELLA 1, 0"),
-            Text("CELLA 1, 1"),
-          ],
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [Text("Hello World")],
+      ),
     );
   }
 }
