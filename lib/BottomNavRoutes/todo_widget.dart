@@ -15,9 +15,26 @@ class TodoWidgetState extends State<TodoWidget> {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [Text("Hello World")],
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text("Row 1 Left"),
+              Text("Row 1 Right"),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text("Row 2 Left"),
+              Text("Row 2 Right"),
+            ],
+          ),
+        ],
       ),
     );
   }
