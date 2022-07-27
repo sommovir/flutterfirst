@@ -12,6 +12,8 @@ class TodoWidget extends StatefulWidget {
   State<TodoWidget> createState() => TodoWidgetState();
 }
 
+//Luca pubblico task 57
+
 int counter = 0;
 
 class TodoWidgetState extends State<TodoWidget> {
